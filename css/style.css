@@ -1,16 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&display=swap");
 
-/*
-Uncomment this when you add your personal handwriting font.
 
 @font-face {
   font-family: "Personal Handwriting";
-  src: url("../assets/fonts/personal-handwriting.woff2") format("woff2");
+  src: url("../assets/fonts/saule-regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
-*/
 
 :root {
   --background: #fafafa;
@@ -19,7 +16,7 @@ Uncomment this when you add your personal handwriting font.
   --blue: #0014c4;
   --line: rgba(34, 34, 34, 0.2);
 
-  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "IBM Plex Mono", Monospace, sans-serif;
   --font-display: "Antonio", "Arial Narrow", Arial, sans-serif;
   --font-handwriting: "Personal Handwriting", cursive;
 
@@ -61,8 +58,8 @@ body.modal-open {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  text-transform: none;
 }
 
 .site-nav {
@@ -76,7 +73,7 @@ body.modal-open {
 .text-link {
   position: relative;
   font-size: 0.75rem;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.08em;
 }
 
@@ -108,8 +105,8 @@ body.modal-open {
 .menu-button {
   display: none;
   font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;
+  letter-spacing: 0.03em;
 }
 
 .page-shell {
@@ -131,10 +128,11 @@ body.modal-open {
   text-align: center;
   font-family: var(--font-display);
   font-size: clamp(3.5rem, 9vw, 9rem);
-  font-weight: 500;
-  line-height: 0.88;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-transform: none;
+  top: -50px;
 }
 
 .hero-title span {
@@ -147,8 +145,8 @@ body.modal-open {
   font-family: var(--font-display);
   font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  text-transform: none;
 }
 
 .hero-note {
@@ -156,8 +154,8 @@ body.modal-open {
   max-width: 15rem;
   font-size: 0.72rem;
   line-height: 1.35;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  text-transform: none;
+  letter-spacing: 0.03em;
 }
 
 .hero-note strong {
@@ -174,7 +172,7 @@ body.modal-open {
 }
 
 .hero-note--two {
-  top: 48%;
+  top: 52%;
   left: 26%;
 }
 
@@ -191,7 +189,7 @@ body.modal-open {
 .hero-image-strip {
   position: absolute;
   right: 3%;
-  top: 35%;
+  top: 10%;
   z-index: 2;
   display: grid;
   width: clamp(7rem, 13vw, 12rem);
@@ -232,7 +230,7 @@ body.modal-open {
   color: var(--rust);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .section-title {
@@ -242,7 +240,7 @@ body.modal-open {
   font-weight: 500;
   line-height: 0.9;
   letter-spacing: -0.03em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .featured-grid,
@@ -317,14 +315,14 @@ body.modal-open {
   font-size: 1.35rem;
   font-weight: 500;
   line-height: 1;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .project-category,
 .project-year {
   font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: none;
 }
 
 .project-description {
@@ -336,8 +334,8 @@ body.modal-open {
 .project-details {
   margin-top: 0.6rem;
   font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  text-transform: none;
+  letter-spacing: 0.03em;
 }
 
 .page-intro {
@@ -356,7 +354,7 @@ body.modal-open {
   font-weight: 500;
   line-height: 0.84;
   letter-spacing: -0.04em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .page-description {
@@ -375,8 +373,8 @@ body.modal-open {
   padding-bottom: 0.2rem;
   border-bottom: 1px solid transparent;
   font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;
+  letter-spacing: 0.03em;
 }
 
 .filter-button:hover,
@@ -413,7 +411,7 @@ body.modal-open {
   font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 500;
   line-height: 0.95;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .about-copy p {
@@ -436,8 +434,8 @@ body.modal-open {
 
 .detail-row dt {
   color: var(--rust);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  text-transform: none;
+  letter-spacing: 0.03em;
 }
 
 .contact-page {
@@ -454,7 +452,7 @@ body.modal-open {
   font-weight: 500;
   line-height: 0.84;
   letter-spacing: -0.04em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .contact-links {
@@ -470,7 +468,7 @@ body.modal-open {
   border-top: 1px solid var(--text);
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 4vw, 4rem);
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .contact-links a:last-child {
@@ -484,7 +482,8 @@ body.modal-open {
 .contact-links span:last-child {
   font-family: var(--font-body);
   font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
+  transform-style: uppercase;
 }
 
 .site-footer {
@@ -494,8 +493,8 @@ body.modal-open {
   padding: 1.5rem var(--page-padding);
   border-top: 1px solid var(--line);
   font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  text-transform: none;
+  letter-spacing: 0.03em;
 }
 
 .footer-links {
@@ -529,8 +528,8 @@ body.modal-open {
   bottom: calc(100% + 0.8rem);
   color: var(--background);
   font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;
+  letter-spacing: 0.03em;
 }
 
 .video-frame {
@@ -561,7 +560,7 @@ body.modal-open {
 .modal-title {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 3vw, 3rem);
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .modal-description {
@@ -579,8 +578,8 @@ body.modal-open {
   place-items: center;
   color: rgba(34, 34, 34, 0.45);
   font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;
+  letter-spacing: 0.03em;
 }
 
 :focus-visible {

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Projects — PLACEHOLDER NAME</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="index.html">
+      PLACEHOLDER SURNAME
+    </a>
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+    >
+      Menu
+    </button>
+
+    <nav class="site-nav" id="site-navigation">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-intro">
+      <h1 class="page-title">Selected work</h1>
+
+      <p class="page-description">
+        PLACEHOLDER INTRODUCTION TO YOUR VIDEOGRAPHY WORK,
+        CREATIVE APPROACH AND SELECTED PROJECTS.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="filters" aria-label="Project categories">
+        <button
+          class="filter-button is-active"
+          type="button"
+          data-filter="all"
+        >
+          All
+        </button>
+
+        <button
+          class="filter-button"
+          type="button"
+          data-filter="events"
+        >
+          Events
+        </button>
+
+        <button
+          class="filter-button"
+          type="button"
+          data-filter="long-form"
+        >
+          Long form
+        </button>
+
+        <button
+          class="filter-button"
+          type="button"
+          data-filter="music"
+        >
+          Music
+        </button>
+
+        <button
+          class="filter-button"
+          type="button"
+          data-filter="fashion"
+        >
+          Fashion
+        </button>
+      </div>
+
+      <div class="projects-grid" data-project-container></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 PLACEHOLDER NAME</p>
+
+    <div class="footer-links">
+      <a href="mailto:PLACEHOLDER_EMAIL">Email</a>
+      <a href="PLACEHOLDER_INSTAGRAM_URL">Instagram</a>
+      <a href="PLACEHOLDER_LINKEDIN_URL">LinkedIn</a>
+    </div>
+  </footer>
+
+  <div
+    class="modal"
+    data-modal
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Video player"
+  >
+    <div class="modal-content">
+      <button
+        class="modal-close"
+        data-modal-close
+        type="button"
+      >
+        Close
+      </button>
+
+      <div class="video-frame" data-modal-frame></div>
+
+      <div class="modal-meta">
+        <div>
+          <h2 class="modal-title" data-modal-title></h2>
+          <p class="modal-description" data-modal-description></p>
+        </div>
+
+        <p class="project-details" data-modal-details></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/projects-data.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>

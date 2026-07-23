@@ -4,10 +4,25 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
   margin: 0;
+}
+
+ul,
+ol {
   padding: 0;
+  list-style: none;
 }
 
 img,
@@ -15,6 +30,21 @@ video,
 iframe {
   display: block;
   max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 a {

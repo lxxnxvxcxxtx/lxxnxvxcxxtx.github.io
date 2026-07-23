@@ -1,0 +1,19 @@
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  main {
+    margin-top: 5rem;
+  }
+}

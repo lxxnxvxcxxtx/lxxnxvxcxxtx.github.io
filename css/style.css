@@ -1,0 +1,45 @@
+:root {
+  --color-background: #fafafa;
+  --color-text: #222222;
+  --color-rust: #762414;
+  --color-blue: #0014c4;
+
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+main {
+  margin-top: 8rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3rem, 10vw, 9rem);
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem;
+}

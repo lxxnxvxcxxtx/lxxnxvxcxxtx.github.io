@@ -25,3 +25,34 @@ if (menuButton && siteNavigation) {
     }
   });
 }
+
+const logo = document.getElementById("site-logo");
+
+if (logo) {
+    logo.addEventListener("mouseenter", () => {
+        logo.classList.remove("logo-blue", "logo-red");
+
+        const randomColor =
+            Math.random() < 0.5
+                ? "logo-blue"
+                : "logo-red";
+
+        logo.classList.add(randomColor);
+    });
+
+    logo.addEventListener("mouseleave", () => {
+        logo.classList.remove("logo-blue", "logo-red");
+    });
+}
+
+document.addEventListener("mousedown", () => {
+    const color =
+        Math.random() < 0.5
+            ? "var(--blue)"
+            : "var(--rust)";
+
+    document.documentElement.style.setProperty(
+        "--selection-color",
+        color
+    );
+});

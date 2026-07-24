@@ -7,6 +7,14 @@ const modalTitle = document.querySelector("[data-modal-title]");
 const modalDescription = document.querySelector("[data-modal-description]");
 const modalDetails = document.querySelector("[data-modal-details]");
 
+const validFilters = [
+  "all",
+  "events",
+  "long-form",
+  "music",
+  "fashion"
+];
+
 function formatCategory(category) {
   const names = {
     music: "MUSIC",
@@ -37,6 +45,7 @@ function createProjectCard(project) {
           loading="lazy"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
         >
+
         <div class="placeholder-image" style="display:none;">
           Add image: ${project.thumbnail}
         </div>
@@ -44,14 +53,23 @@ function createProjectCard(project) {
 
       <div class="project-meta">
         <div>
-          <h2 class="project-title">${project.title}</h2>
-          <p class="project-category">${formatCategory(project.category)}</p>
+          <h2 class="project-title">
+            ${project.title}
+          </h2>
+
+          <p class="project-category">
+            ${formatCategory(project.category)}
+          </p>
         </div>
 
-        <p class="project-year">${project.year}</p>
+        <p class="project-year">
+          ${project.year}
+        </p>
       </div>
 
-      <p class="project-description">${project.description}</p>
+      <p class="project-description">
+        ${project.description}
+      </p>
 
       <p class="project-details">
         ${project.client} / ${project.role}
@@ -72,33 +90,70 @@ function renderProjects(filter = "all") {
   let visibleProjects = projects;
 
   if (projectContainer.dataset.featured === "true") {
-    visibleProjects = projects.filter((project) => project.featured);
+    visibleProjects = visibleProjects.filter(
+      (project) => project.featured
+    );
   }
 
   if (filter !== "all") {
     visibleProjects = visibleProjects.filter(
-      (project) => project.category === filter
+      (project) =>
+        project.category.toLowerCase() === filter.toLowerCase()
     );
   }
 
   visibleProjects.forEach((project) => {
-    projectContainer.appendChild(createProjectCard(project));
+    projectContainer.appendChild(
+      createProjectCard(project)
+    );
+  });
+
+  if (visibleProjects.length === 0) {
+    projectContainer.innerHTML = `
+      <p class="empty-projects-message">
+        No projects found in this category.
+      </p>
+    `;
+  }
+}
+
+function setActiveFilter(selectedFilter) {
+  filterButtons.forEach((button) => {
+    button.classList.toggle(
+      "is-active",
+      button.dataset.filter === selectedFilter
+    );
   });
 }
 
-function openModal(project) {
+function updateFilterUrl(selectedFilter) {
+  const url = new URL(window.location.href);
 
-  // Instagram project → open Instagram
+  if (selectedFilter === "all") {
+    url.searchParams.delete("filter");
+  } else {
+    url.searchParams.set("filter", selectedFilter);
+  }
+
+  window.history.replaceState(
+    {},
+    "",
+    `${url.pathname}${url.search}${url.hash}`
+  );
+}
+
+function openModal(project) {
+  // Instagram projects open on Instagram.
   if (project.instagram) {
     window.open(
       project.instagram,
       "_blank",
       "noopener,noreferrer"
     );
+
     return;
   }
 
-  // Continue with YouTube modal
   if (!modal || !modalFrame) {
     return;
   }
@@ -115,7 +170,7 @@ function openModal(project) {
   if (isPlaceholder) {
     modalFrame.innerHTML = `
       <div class="placeholder-image">
-        Replace PLACEHOLDER_YOUTUBE_ID or add an Instagram URL in projects-data.js
+        Add a YouTube ID or Instagram URL in projects-data.js
       </div>
     `;
   } else {
@@ -129,10 +184,18 @@ function openModal(project) {
     `;
   }
 
-  modalTitle.textContent = project.title;
-  modalDescription.textContent = project.description;
-  modalDetails.textContent =
-    `${project.client} / ${project.year} / ${project.role}`;
+  if (modalTitle) {
+    modalTitle.textContent = project.title;
+  }
+
+  if (modalDescription) {
+    modalDescription.textContent = project.description;
+  }
+
+  if (modalDetails) {
+    modalDetails.textContent =
+      `${project.client} / ${project.year} / ${project.role}`;
+  }
 
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
@@ -153,11 +216,14 @@ function closeModal() {
 }
 
 document.addEventListener("click", (event) => {
-  const projectButton = event.target.closest("[data-project-id]");
+  const projectButton = event.target.closest(
+    "[data-project-id]"
+  );
 
   if (projectButton) {
     const project = projects.find(
-      (item) => item.id === projectButton.dataset.projectId
+      (item) =>
+        item.id === projectButton.dataset.projectId
     );
 
     if (project) {
@@ -172,18 +238,40 @@ document.addEventListener("click", (event) => {
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    filterButtons.forEach((item) => item.classList.remove("is-active"));
-    button.classList.add("is-active");
-    renderProjects(button.dataset.filter);
+    const selectedFilter = button.dataset.filter;
+
+    setActiveFilter(selectedFilter);
+    renderProjects(selectedFilter);
+    updateFilterUrl(selectedFilter);
   });
 });
 
-modalCloseButton?.addEventListener("click", closeModal);
+modalCloseButton?.addEventListener(
+  "click",
+  closeModal
+);
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && modal?.classList.contains("is-open")) {
+  if (
+    event.key === "Escape" &&
+    modal?.classList.contains("is-open")
+  ) {
     closeModal();
   }
 });
 
-renderProjects();
+const urlParameters = new URLSearchParams(
+  window.location.search
+);
+
+const requestedFilter =
+  urlParameters.get("filter") || "all";
+
+const initialFilter = validFilters.includes(
+  requestedFilter.toLowerCase()
+)
+  ? requestedFilter.toLowerCase()
+  : "all";
+
+setActiveFilter(initialFilter);
+renderProjects(initialFilter);

@@ -9,6 +9,7 @@
   >
 
   <title>projects | LEONAVIčIūTė</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
@@ -27,12 +28,16 @@
       aria-expanded="false"
       aria-controls="site-navigation"
     >
-      Menu
+      MENU
     </button>
 
-    <nav class="site-nav" id="site-navigation">
+    <nav
+      class="site-nav"
+      id="site-navigation"
+      aria-label="Main navigation"
+    >
       <a href="index.html">HOME</a>
-      <a href="projects.html">PROJECT</a>
+      <a href="projects.html" aria-current="page">PROJECTS</a>
       <a href="about.html">ABOUT</a>
       <a href="contact.html">CONTACT</a>
     </nav>
@@ -43,12 +48,15 @@
       <h1 class="page-title">my work</h1>
 
       <p class="page-description">
-        ALL MY PROJECTS LIALIALIA
+        A GROWING ARCHIVE OF VISUAL STORIES
       </p>
     </section>
 
     <section class="section">
-      <div class="filters" aria-label="Project categories">
+      <div
+        class="filters"
+        aria-label="Project categories"
+      >
         <button
           class="filter-button is-active"
           type="button"
@@ -90,7 +98,10 @@
         </button>
       </div>
 
-      <div class="projects-grid" data-project-container></div>
+      <div
+        class="projects-grid"
+        data-project-container
+      ></div>
     </section>
   </main>
 
@@ -98,9 +109,25 @@
     <p>© 2026 LEONAVIčIūTė</p>
 
     <div class="footer-links">
-      <a href="mailto:saule.leonaviciutes@gmail.com">EMAIL</a>
-      <a href="https://www.instagram.com/frame___25/">INSTAGRAM</a>
-      <a href="https://www.linkedin.com/in/saule-leonaviciute/">LINKEDIN</a>
+      <a href="mailto:saule.leonaviciutes@gmail.com">
+        EMAIL
+      </a>
+
+      <a
+        href="https://www.instagram.com/frame___25/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        INSTAGRAM
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/saule-leonaviciute/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LINKEDIN
+      </a>
     </div>
   </footer>
 
@@ -117,19 +144,33 @@
         class="modal-close"
         data-modal-close
         type="button"
+        aria-label="Close video"
       >
         CLOSE
       </button>
 
-      <div class="video-frame" data-modal-frame></div>
+      <div
+        class="video-frame"
+        data-modal-frame
+      ></div>
 
       <div class="modal-meta">
         <div>
-          <h2 class="modal-title" data-modal-title></h2>
-          <p class="modal-description" data-modal-description></p>
+          <h2
+            class="modal-title"
+            data-modal-title
+          ></h2>
+
+          <p
+            class="modal-description"
+            data-modal-description
+          ></p>
         </div>
 
-        <p class="project-details" data-modal-details></p>
+        <p
+          class="project-details"
+          data-modal-details
+        ></p>
       </div>
     </div>
   </div>

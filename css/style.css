@@ -37,8 +37,12 @@ body.modal-open {
   overflow: hidden;
 }
 
+:root {
+  --selection-color: var(--blue);
+}
+
 ::selection {
-  background: var(--blue);
+  background: var(--selection-color);
   color: var(--background);
 }
 
@@ -585,4 +589,41 @@ body.modal-open {
 :focus-visible {
   outline: 2px solid var(--blue);
   outline-offset: 4px;
+}
+
+.hero-category-link {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-category-link strong,
+.hero-category-link span {
+  color: inherit;
+  transition: color 180ms ease;
+}
+
+.hero-category-link--blue:hover,
+.hero-category-link--blue:focus-visible,
+.hero-category-link--blue:hover strong,
+.hero-category-link--blue:hover span,
+.hero-category-link--blue:focus-visible strong,
+.hero-category-link--blue:focus-visible span {
+  color: var(--blue);
+}
+
+.site-logo {
+    transition: color 180ms ease;
+}
+
+.site-logo.logo-blue {
+    color: var(--blue);
+}
+
+.site-logo.logo-red {
+    color: var(--rust);
 }

@@ -9,10 +9,10 @@ const modalDetails = document.querySelector("[data-modal-details]");
 
 function formatCategory(category) {
   const names = {
-    music: "Music",
-    fashion: "Fashion",
-    events: "Events",
-    "long-form": "Long form"
+    music: "MUSIC",
+    fashion: "FASHION",
+    events: "EVENTS",
+    "long-form": "LONG FORM"
   };
 
   return names[category] || category;
@@ -27,13 +27,13 @@ function createProjectCard(project) {
       class="project-button"
       type="button"
       data-project-id="${project.id}"
-      aria-label="Watch ${project.title}"
+      aria-label="View ${project.title}"
     >
       <div class="project-image-wrap">
         <img
           class="project-image"
           src="${project.thumbnail}"
-          alt="PLACEHOLDER STILL FROM ${project.title}"
+          alt="${project.title}"
           loading="lazy"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
         >
@@ -87,6 +87,18 @@ function renderProjects(filter = "all") {
 }
 
 function openModal(project) {
+
+  // Instagram project → open Instagram
+  if (project.instagram) {
+    window.open(
+      project.instagram,
+      "_blank",
+      "noopener,noreferrer"
+    );
+    return;
+  }
+
+  // Continue with YouTube modal
   if (!modal || !modalFrame) {
     return;
   }
@@ -103,7 +115,7 @@ function openModal(project) {
   if (isPlaceholder) {
     modalFrame.innerHTML = `
       <div class="placeholder-image">
-        Replace PLACEHOLDER_YOUTUBE_ID in projects-data.js
+        Replace PLACEHOLDER_YOUTUBE_ID or add an Instagram URL in projects-data.js
       </div>
     `;
   } else {
@@ -126,7 +138,7 @@ function openModal(project) {
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
 
-  modalCloseButton.focus();
+  modalCloseButton?.focus();
 }
 
 function closeModal() {

@@ -1,7 +1,7 @@
 const projects = [
   {
     id: "agn-isimylek",
-    title: "ĮSIMYLĖK",
+    title: "įSIMYLėK",
     category: "music",
     client: "AGN",
     year: "2024",
@@ -9,6 +9,19 @@ const projects = [
     description: "pradėjo patikt, kaip dabar gyvenimą piešiu",
     thumbnail: "assets/images/projects/agn-1.jpg",
     youtubeId: "4tBiw6oHTYc",
+    orientation: "landscape",
+    featured: false
+  },
+  {
+    id: "agn-picture-perfect",
+    title: "PICTURE PERFECT",
+    category: "music",
+    client: "AGN, MURZINAS, ELZZSEVENTEEN",
+    year: "2025",
+    role: "producer & editor",
+    description: "i kinda like the way the chaos sounds",
+    thumbnail: "assets/images/projects/agn-3.jpg",
+    youtubeId: "oMtp5lLzVDk",
     orientation: "landscape",
     featured: false
   },
@@ -26,16 +39,16 @@ const projects = [
     featured: true
   },
   {
-    id: "agn-picture-perfect",
-    title: "PICTURE PERFECT",
-    category: "music",
-    client: "AGN, MURZINAS, ELZZSEVENTEEN",
-    year: "2025",
+    id: "lucie",
+    title: "LUCIE",
+    category: "long-form",
+    client: "FRAME25",
+    year: "2024",
     role: "producer & editor",
-    description: "i kinda like the way the chaos sounds",
-    thumbnail: "assets/images/projects/agn-3.jpg",
-    youtubeId: "oMtp5lLzVDk",
-    orientation: "landscape",
+    description: "this is a love letter to those who nurture the French spirit, full of confidence & cheap wine",
+    thumbnail: "assets/images/projects/lucie.jpg",
+    youtubeId: "GsJzImcZeKU",
+    orientation: "horizontal",
     featured: false
   },
   {
@@ -65,58 +78,6 @@ const projects = [
     featured: false
   },
   {
-    id: "marta-adaptive-duality",
-    title: "ADAPTIVE DUALITY",
-    category: "fashion",
-    client: "A.M.ART.E.A",
-    year: "2024",
-    role: "videographer & editor",
-    description: "nature blends with street fashion",
-    thumbnail: "assets/images/projects/marta-2.jpg",
-    youtubeId: "ZxQYJflmzao",
-    orientation: "vertical",
-    featured: false
-  },
-  {
-    id: "saule-spaudzia-laukas",
-    title: "SPAUDžIA | pt. 1",
-    category: "fashion",
-    client: "SAULEX",
-    year: "2024",
-    role: "videographer & editor",
-    description: "laukas",
-    thumbnail: "assets/images/projects/saule-1.jpg",
-    youtubeId: "9TFJixJP3ko",
-    orientation: "vertical",
-    featured: true
-  },
-  {
-    id: "saule-spaudzia-runway",
-    title: "SPAUDžIA | pt. 2",
-    category: "fashion",
-    client: "SAULEX",
-    year: "2024",
-    role: "videographer & editor",
-    description: "runway",
-    thumbnail: "assets/images/projects/saule-2.jpg",
-    youtubeId: "Ci9gCO6qv0k",
-    orientation: "vertical",
-    featured: false
-  },
-  {
-    id: "saule-spaudzia-red",
-    title: "SPAUDžIA | pt. 3",
-    category: "fashion",
-    client: "SAULEX",
-    year: "2024",
-    role: "videographer & editor",
-    description: "red",
-    thumbnail: "assets/images/projects/saule-3.jpg",
-    youtubeId: "yoM7rRitX0k",
-    orientation: "vertical",
-    featured: false
-  },
-  {
     id: "agn-event",
     title: "4 HOURS UNTIL",
     category: "events",
@@ -130,10 +91,23 @@ const projects = [
     featured: false
   },
   {
+    id: "marta-adaptive-duality",
+    title: "ADAPTIVE DUALITY",
+    category: "fashion",
+    client: "A.M.ART.E.A",
+    year: "2024",
+    role: "videographer & editor",
+    description: "nature blends with street fashion",
+    thumbnail: "assets/images/projects/marta-2.jpg",
+    youtubeId: "ZxQYJflmzao",
+    orientation: "vertical",
+    featured: false
+  },
+  {
     id: "pdf",
     title: "PUSėS DAINOS FESTIVALIS",
     category: "events",
-    client: "PDF",
+    client: "PUSė DAINOS",
     year: "2025",
     role: "videographer & editor",
     description: "description",
@@ -143,15 +117,41 @@ const projects = [
     featured: true
   },
   {
-    id: "nfs",
-    title: "SIX.",
-    category: "events",
-    client: "NFS",
+    id: "saule-spaudzia-laukas",
+    title: "SPAUDžiA | pt. 1",
+    category: "fashion",
+    client: "SAULEX",
     year: "2024",
     role: "videographer & editor",
-    description: "aftermovie for the final New Fashion Society fashion show",
-    thumbnail: "assets/images/projects/nfs.jpg",
-    youtubeId: "CZy_WVZe9wE",
+    description: "laukas",
+    thumbnail: "assets/images/projects/saule-1.jpg",
+    youtubeId: "9TFJixJP3ko",
+    orientation: "vertical",
+    featured: true
+  },
+  {
+    id: "saule-spaudzia-runway",
+    title: "SPAUDžiA | pt. 2",
+    category: "fashion",
+    client: "SAULEX",
+    year: "2024",
+    role: "videographer & editor",
+    description: "runway",
+    thumbnail: "assets/images/projects/saule-2.jpg",
+    youtubeId: "Ci9gCO6qv0k",
+    orientation: "vertical",
+    featured: false
+  },
+  {
+    id: "saule-spaudzia-red",
+    title: "SPAUDžiA | pt. 3",
+    category: "fashion",
+    client: "SAULEX",
+    year: "2024",
+    role: "videographer & editor",
+    description: "red",
+    thumbnail: "assets/images/projects/saule-3.jpg",
+    youtubeId: "yoM7rRitX0k",
     orientation: "vertical",
     featured: false
   },
@@ -165,6 +165,19 @@ const projects = [
     description: "promo for an event hosted by the dj collective Kitokie Kitokiems",
     thumbnail: "assets/images/projects/kitokie-kitokiems.jpg",
     youtubeId: "Uu3mrc9xrlQ",
+    orientation: "vertical",
+    featured: false
+  },
+  {
+    id: "nfs",
+    title: "SIX.",
+    category: "events",
+    client: "NFS",
+    year: "2024",
+    role: "videographer & editor",
+    description: "aftermovie for the final New Fashion Society fashion show",
+    thumbnail: "assets/images/projects/nfs.jpg",
+    youtubeId: "CZy_WVZe9wE",
     orientation: "vertical",
     featured: false
   },
@@ -192,19 +205,6 @@ const projects = [
     thumbnail: "assets/images/projects/obscuur.jpg",
     youtubeId: "epj-6kPReFc",
     orientation: "vertical",
-    featured: false
-  },
-  {
-    id: "lucie",
-    title: "LUCIE",
-    category: "long-form",
-    client: "FRAME25",
-    year: "2024",
-    role: "producer & editor",
-    description: "this is a love letter to those who nurture the French spirit, full of confidence & cheap wine",
-    thumbnail: "assets/images/projects/lucie.jpg",
-    youtubeId: "GsJzImcZeKU",
-    orientation: "horizontal",
     featured: false
   },
 ];

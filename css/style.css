@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;600;700&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap');
 
 @font-face {
   font-family: "Personal Handwriting";
@@ -30,7 +31,7 @@ body {
   background: var(--background);
   color: var(--text);
   font-family: var(--font-body);
-  line-height: 1.4;
+  line-height: 1;
 }
 
 body.modal-open {
@@ -78,7 +79,7 @@ body.modal-open {
   position: relative;
   font-size: 0.75rem;
   text-transform: none;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
 }
 
 .site-nav a::after,
@@ -110,7 +111,6 @@ body.modal-open {
   display: none;
   font-size: 0.75rem;
   text-transform: none;
-  letter-spacing: 0.03em;
 }
 
 .page-shell {
@@ -233,7 +233,7 @@ body.modal-open {
 .section-kicker {
   color: var(--rust);
   font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  letter-spacing: -0.05em;
   text-transform: none;
 }
 
@@ -243,7 +243,7 @@ body.modal-open {
   font-size: clamp(3rem, 7vw, 7rem);
   font-weight: 500;
   line-height: 0.9;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.07em;
   text-transform: none;
 }
 
@@ -320,6 +320,8 @@ body.modal-open {
   font-weight: 500;
   line-height: 1;
   text-transform: none;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.05em;
 }
 
 .project-category,
@@ -327,19 +329,21 @@ body.modal-open {
   font-size: 0.65rem;
   letter-spacing: 0.03em;
   text-transform: none;
+  letter-spacing: -0.05em;
 }
 
 .project-description {
   max-width: 35rem;
   margin-top: 0.5rem;
   font-size: 0.8rem;
+  letter-spacing: -0.05em;
 }
 
 .project-details {
   margin-top: 0.6rem;
   font-size: 0.68rem;
   text-transform: none;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
 }
 
 .page-intro {
@@ -349,6 +353,9 @@ body.modal-open {
   min-height: 55vh;
   padding: clamp(4rem, 8vw, 8rem) 0;
   align-items: end;
+  text-align: justify;
+  line-height: 1.2;
+  font-weight: 400;
 }
 
 .page-title {
@@ -357,13 +364,14 @@ body.modal-open {
   font-size: clamp(4rem, 10vw, 10rem);
   font-weight: 500;
   line-height: 0.84;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
   text-transform: none;
 }
 
 .page-description {
   max-width: 32rem;
   font-size: clamp(1rem, 1.5vw, 1.3rem);
+  letter-spacing: -0.05em;
 }
 
 .filters {
@@ -378,7 +386,6 @@ body.modal-open {
   border-bottom: 1px solid transparent;
   font-size: 0.7rem;
   text-transform: none;
-  letter-spacing: 0.03em;
 }
 
 .filter-button:hover,
@@ -416,10 +423,14 @@ body.modal-open {
   font-weight: 500;
   line-height: 0.95;
   text-transform: none;
+  letter-spacing: -0.05em;
+  margin-bottom: 1rem;
 }
 
 .about-copy p {
   max-width: 42rem;
+  text-align: justify;
+  line-height: 1.2;
 }
 
 .detail-list {
@@ -434,19 +445,22 @@ body.modal-open {
   padding-top: 0.6rem;
   border-top: 1px solid var(--line);
   font-size: 0.78rem;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
 }
 
 .detail-row dt {
   color: var(--rust);
   text-transform: none;
-  letter-spacing: 0.03em;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
 }
 
 .contact-page {
   display: grid;
   min-height: calc(100vh - var(--header-height));
   padding: clamp(4rem, 8vw, 8rem) 0;
-  align-content: space-between;
+  align-content: space-between; 
 }
 
 .contact-heading {

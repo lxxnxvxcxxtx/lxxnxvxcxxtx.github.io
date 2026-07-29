@@ -173,3 +173,8 @@
     animation-iteration-count: 1 !important;
   }
 }
+
+.modal-content {
+  width: min(90vw, 60rem) !important;
+  margin: 0 auto;
+}
